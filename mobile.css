@@ -1,0 +1,195 @@
+/* ── Mobile & Tablet Responsive Overrides ── */
+
+/* Hamburger button (hidden on desktop) */
+.mob-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  z-index: 50;
+}
+.mob-menu-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #FAF8F2;
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+.mob-nav {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(18,17,16,.98);
+  z-index: 45;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 30px;
+}
+.mob-nav.open { display: flex !important; }
+.mob-nav a {
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #FAF8F2;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  transition: color .2s;
+}
+.mob-nav a:hover { color: #CDA24E; }
+.mob-nav .mob-close {
+  position: absolute;
+  top: 22px; right: 22px;
+  background: none; border: none;
+  color: #FAF8F2; font-size: 28px;
+  cursor: pointer; line-height: 1;
+}
+
+@media (max-width: 860px) {
+
+  /* ── Header ── */
+  header {
+    padding: 14px 20px !important;
+  }
+  header > a > span { font-size: 16px !important; }
+  header > a > img { height: 36px !important; }
+  header nav { display: none !important; }
+  header > a[href*="Contact"] { display: none !important; }
+  .mob-menu-btn { display: flex !important; }
+
+  /* ── Section padding ── */
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* ── 2-column hero grids → single column ── */
+  [style*="grid-template-columns:1.05fr 0.95fr"],
+  [style*="grid-template-columns:1.1fr 0.9fr"],
+  [style*="grid-template-columns:0.85fr 1.15fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns:1.6fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── 3-column package grids → 1 column ── */
+  [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── 4-column grids → 2 columns ── */
+  [style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ── 5-column timeline → 1 column ── */
+  [style*="grid-template-columns:repeat(5,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ── 6-column inclusions → 2 columns ── */
+  [style*="grid-template-columns:repeat(6,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ── Hero image panels: hide tall right-side image on mobile ── */
+  [style*="position:relative;background:#0c0b08"] {
+    min-height: 220px !important;
+  }
+
+  /* ── Large headings ── */
+  h1 { font-size: 36px !important; letter-spacing: -0.8px !important; }
+  h2 { font-size: 26px !important; letter-spacing: -0.5px !important; }
+  h3 { font-size: 19px !important; }
+
+  /* ── Hero font sizes (Sora) ── */
+  [style*="font-size:72px"] { font-size: 38px !important; }
+  [style*="font-size:62px"] { font-size: 34px !important; }
+  [style*="font-size:60px"] { font-size: 32px !important; }
+  [style*="font-size:58px"] { font-size: 30px !important; }
+  [style*="font-size:56px"] { font-size: 30px !important; }
+  [style*="font-size:54px"] { font-size: 28px !important; }
+  [style*="font-size:46px"] { font-size: 26px !important; }
+  [style*="font-size:42px"] { font-size: 24px !important; }
+  [style*="font-size:38px"] { font-size: 22px !important; }
+  [style*="font-size:36px"] { font-size: 22px !important; }
+
+  /* ── Stats numbers ── */
+  [style*="font-size:30px"] { font-size: 22px !important; }
+  [style*="font-size:46px;line-height:1"] { font-size: 30px !important; }
+
+  /* ── CTA strip: stack ── */
+  [style*="display:flex;align-items:center;justify-content:space-between"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+
+  /* ── Button groups: wrap ── */
+  [style*="display:flex;gap:14px;margin-top:36px"],
+  [style*="display:flex;gap:14px;margin-top:30px"],
+  [style*="display:flex;gap:12px;flex-wrap:wrap"] {
+    flex-wrap: wrap !important;
+  }
+
+  /* ── Footer ── */
+  footer { padding: 40px 20px 24px !important; }
+
+  /* ── Hero text sections ── */
+  [style*="padding:84px 60px"],
+  [style*="padding:76px 60px"],
+  [style*="padding:72px 60px"],
+  [style*="padding:80px 60px"] {
+    padding: 44px 20px !important;
+  }
+
+  /* ── Contact grid ── */
+  [style*="grid-template-columns:0.85fr 1.15fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Form padding ── */
+  [style*="padding:42px 44px"] { padding: 28px 20px !important; }
+
+  /* ── Hajj package split ── */
+  [style*="grid-template-columns:1fr 1fr;gap:0"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="padding:56px 50px"] { padding: 32px 24px !important; }
+
+  /* ── WhatsApp float: smaller ── */
+  [style*="position:fixed;left:24px;bottom:24px"] {
+    padding: 11px 16px !important;
+    font-size: 12px !important;
+  }
+
+  /* ── Stats band ── */
+  [style*="padding:60px;display:grid"] {
+    padding: 40px 20px !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [style*="grid-template-columns:repeat(4,1fr)"],
+  [style*="grid-template-columns:repeat(5,1fr)"],
+  [style*="grid-template-columns:repeat(6,1fr)"],
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [style*="display:grid;grid-template-columns:1fr 1fr;gap:16px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  h1 { font-size: 30px !important; }
+  h2 { font-size: 22px !important; }
+}

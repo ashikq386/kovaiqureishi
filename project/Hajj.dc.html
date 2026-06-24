@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0c0b08}
+  a{text-decoration:none;color:inherit}
+  .navlink{position:relative;transition:color .2s;cursor:pointer}
+  .navlink:hover{color:#CDA24E}
+  .btnhover{transition:filter .25s ease, transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease}
+  .btnhover:hover{filter:brightness(1.07)}
+  .cardhover{transition:transform .3s ease, box-shadow .3s ease}
+  .cardhover:hover{transform:translateY(-6px)}
+  .gg-bg{background:linear-gradient(135deg,#F4E4AC 0%,#CDA24E 44%,#9C7B2D 76%,#E8D08A 100%)}
+  .gg-text{background:linear-gradient(135deg,#F4E4AC 0%,#D4AA55 46%,#B98E33 80%,#F0DC96 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div data-screen-label="Hajj 2026" style="max-width:1440px;margin:0 auto;position:relative;background:#121110;font-family:'Jost',sans-serif;color:#FAF8F2;overflow:hidden">
+
+  <header style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:20px 60px;background:rgba(18,17,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)">
+    <a href="Home.dc.html" style="display:flex;align-items:center;gap:13px">
+      <img src="assets/kovai-logo.png" alt="Kovai Qureishi" style="height:46px;width:auto;display:block">
+      <span style="font-family:'Sora',sans-serif;font-weight:700;font-size:20px;letter-spacing:.02em;color:#FAF8F2">Kovai Qureishi</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:32px;font-size:13.5px;letter-spacing:.04em;color:rgba(250,248,242,.82)">
+      <a class="navlink" href="Home.dc.html">Home</a>
+      <a class="navlink" href="Packages.dc.html">Packages</a>
+      <a class="navlink" href="Umrah.dc.html">Umrah</a>
+      <a class="navlink gg-text" href="Hajj.dc.html" style="font-weight:600">Hajj 2026</a>
+      <a class="navlink" href="About.dc.html">About</a>
+      <a class="navlink" href="Contact.dc.html">Contact</a>
+    </nav>
+    <a href="Contact.dc.html" class="btnhover gg-bg" style="font-family:'Sora',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.06em;color:#121110;padding:13px 26px;cursor:pointer">Book Now →</a>
+  </header>
+
+  <!-- hero -->
+  <section style="position:relative;display:grid;grid-template-columns:1.05fr 0.95fr;min-height:560px">
+    <div style="padding:84px 60px;display:flex;flex-direction:column;justify-content:center;background:#121110">
+      <span style="font-family:'Sora',sans-serif;font-weight:600;font-size:12px;letter-spacing:.28em;color:#CDA24E">THE FIFTH PILLAR · 2026 SEASON</span>
+      <h1 style="font-family:'Sora',sans-serif;font-weight:800;font-size:62px;line-height:1.03;letter-spacing:-1.5px;margin-top:18px">The journey of <span class="gg-text">a lifetime</span></h1>
+      <p style="font-size:16.5px;line-height:1.7;color:rgba(250,248,242,.74);max-width:480px;margin-top:22px;font-weight:300">Our fully managed Hajj 2026 package covers every rite, every camp and every meal — guided by experienced scholars from departure to return. Places are strictly limited.</p>
+      <div style="display:flex;gap:14px;margin-top:34px">
+        <a href="#package" class="btnhover gg-bg" style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#121110;padding:16px 32px">See Hajj 2026 Package</a>
+        <a href="Contact.dc.html" class="btnhover" style="font-family:'Sora',sans-serif;font-weight:600;font-size:13px;color:#FAF8F2;background:transparent;border:1px solid rgba(250,248,242,.3);padding:16px 32px" style-hover="border-color:#CDA24E;color:#CDA24E">Reserve a Place</a>
+      </div>
+      <div class="gg-bg" style="display:inline-flex;align-items:center;gap:10px;margin-top:30px;align-self:flex-start;color:#121110;padding:12px 18px;border-radius:6px;font-family:'Sora',sans-serif;font-weight:700;font-size:13px">Limited places remaining for 2026</div>
+    </div>
+    <div style="position:relative;background:#0c0b08">
+      <image-slot id="hajj-hero" shape="rect" placeholder="Drop a pilgrims at Arafat photo" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:42%;background:linear-gradient(180deg,transparent,rgba(12,11,8,.85));pointer-events:none"></div>
+    </div>
+  </section>
+
+  <!-- what is hajj -->
+  <section style="padding:80px 60px;background:#1B1A16;text-align:center">
+    <span style="font-family:'Sora',sans-serif;font-weight:600;font-size:12px;letter-spacing:.28em;color:#CDA24E">WHAT IS HAJJ</span>
+    <h2 style="font-family:'Sora',sans-serif;font-weight:800;font-size:40px;letter-spacing:-.9px;margin-top:12px">Once in a lifetime, upon those who are able</h2>
+    <p style="font-size:16px;color:rgba(250,248,242,.72);line-height:1.8;max-width:760px;margin:18px auto 0;font-weight:300">Hajj is the fifth pillar of Islam and an obligation, once in a lifetime, for every Muslim who is physically and financially able. Performed during the month of Dhul Hijjah, it unites millions of pilgrims in a profound act of unity, devotion and submission to Allah.</p>
+  </section>
+
+  <!-- timeline -->
+  <section style="padding:90px 60px;background:#121110">
+    <div style="text-align:center;margin-bottom:54px">
+      <span style="font-family:'Sora',sans-serif;font-weight:600;font-size:12px;letter-spacing:.28em;color:#CDA24E">THE DAYS OF HAJJ</span>
+      <h2 style="font-family:'Sora',sans-serif;font-weight:800;font-size:42px;letter-spacing:-1px;margin-top:12px">A guided day-by-day journey</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08)">
+      <div style="background:#1B1A16;padding:34px 24px"><div style="font-family:'Sora',sans-serif;font-weight:600;font-size:11px;letter-spacing:.16em;color:#CDA24E">8 DHUL HIJJAH</div><div class="gg-text" style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;margin-top:10px">Mina</div><p style="font-size:13px;color:rgba(250,248,242,.62);line-height:1.6;margin-top:10px;font-weight:300">Enter Ihram and travel to Mina for a day of prayer and reflection.</p></div>
+      <div style="background:#1B1A16;padding:34px 24px"><div style="font-family:'Sora',sans-serif;font-weight:600;font-size:11px;letter-spacing:.16em;color:#CDA24E">9 DHUL HIJJAH</div><div class="gg-text" style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;margin-top:10px">Arafat</div><p style="font-size:13px;color:rgba(250,248,242,.62);line-height:1.6;margin-top:10px;font-weight:300">The day of Arafah — standing in supplication, the essence of Hajj.</p></div>
+      <div style="background:#1B1A16;padding:34px 24px"><div style="font-family:'Sora',sans-serif;font-weight:600;font-size:11px;letter-spacing:.16em;color:#CDA24E">10 DHUL HIJJAH</div><div class="gg-text" style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;margin-top:10px">Muzdalifah</div><p style="font-size:13px;color:rgba(250,248,242,.62);line-height:1.6;margin-top:10px;font-weight:300">Stoning of the Jamarat, sacrifice, and Eid al-Adha celebration.</p></div>
+      <div style="background:#1B1A16;padding:34px 24px"><div style="font-family:'Sora',sans-serif;font-weight:600;font-size:11px;letter-spacing:.16em;color:#CDA24E">11–12 DHUL HIJJAH</div><div class="gg-text" style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;margin-top:10px">Tashreeq</div><p style="font-size:13px;color:rgba(250,248,242,.62);line-height:1.6;margin-top:10px;font-weight:300">Days of remembrance in Mina with continued stoning of the Jamarat.</p></div>
+      <div style="background:#1B1A16;padding:34px 24px"><div style="font-family:'Sora',sans-serif;font-weight:600;font-size:11px;letter-spacing:.16em;color:#CDA24E">13 DHUL HIJJAH</div><div class="gg-text" style="font-family:'Sora',sans-serif;font-weight:800;font-size:24px;margin-top:10px">Tawaf al-Wada</div><p style="font-size:13px;color:rgba(250,248,242,.62);line-height:1.6;margin-top:10px;font-weight:300">The farewell Tawaf, completing your Hajj before departure.</p></div>
+    </div>
+  </section>
+
+  <!-- package detail -->
+  <section id="package" style="padding:90px 60px;background:#1B1A16">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #CDA24E;box-shadow:0 0 0 1px rgba(205,162,78,.35)">
+      <div style="position:relative;min-height:480px">
+        <image-slot id="hajj-mina" shape="rect" placeholder="Drop a Mina camps photo" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+        <span class="gg-bg" style="position:absolute;top:18px;right:18px;font-family:'Sora',sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;color:#121110;padding:7px 13px;border-radius:4px">HAJJ 2026</span>
+      </div>
+      <div style="background:#121110;padding:56px 50px;display:flex;flex-direction:column;justify-content:center">
+        <h2 style="font-family:'Sora',sans-serif;font-weight:800;font-size:36px;letter-spacing:-.8px">Complete Hajj 2026 Package</h2>
+        <div style="display:flex;gap:18px;margin-top:12px;font-size:13px;color:rgba(250,248,242,.6)"><span>★★★★★ Camps &amp; Hotels</span><span>Full ritual support</span></div>
+        <div style="height:1px;background:rgba(255,255,255,.12);margin:24px 0"></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:13.5px;color:rgba(250,248,242,.85)">
+          <span style="display:flex;gap:10px;align-items:center"><span style="color:#CDA24E;display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Return flights &amp; Hajj visa</span>
+          <span style="display:flex;gap:10px;align-items:center"><span style="color:#CDA24E;display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Premium Mina &amp; Arafat camps</span>
+          <span style="display:flex;gap:10px;align-items:center"><span style="color:#CDA24E;display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>5★ hotels near both Harams</span>
+          <span style="display:flex;gap:10px;align-items:center"><span style="color:#CDA24E;display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Experienced scholar guides</span>
+          <span style="display:flex;gap:10px;align-items:center"><span style="color:#CDA24E;display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>All meals &amp; transport</span>
+          <span style="display:flex;gap:10px;align-items:center"><span style="color:#CDA24E;display:flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>24/7 on-ground support</span>
+        </div>
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-top:34px">
+          <div><span style="font-size:12px;color:rgba(250,248,242,.5)">from</span><div class="gg-text" style="font-family:'Sora',sans-serif;font-weight:800;font-size:38px">₹7,50,000</div></div>
+          <a href="Contact.dc.html" class="btnhover gg-bg" style="font-family:'Sora',sans-serif;font-weight:700;font-size:13px;color:#121110;padding:15px 28px;border-radius:8px">Reserve Now →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- eligibility -->
+  <section style="padding:80px 60px;background:#121110">
+    <div style="text-align:center;margin-bottom:46px">
+      <span style="font-family:'Sora',sans-serif;font-weight:600;font-size:12px;letter-spacing:.28em;color:#CDA24E">BEFORE YOU TRAVEL</span>
+      <h2 style="font-family:'Sora',sans-serif;font-weight:800;font-size:38px;letter-spacing:-.8px;margin-top:12px">What you'll need</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div style="border:1px solid rgba(255,255,255,.08);background:#1B1A16;padding:34px 30px"><h4 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px">Valid Passport</h4><p style="font-size:13.5px;color:rgba(250,248,242,.62);line-height:1.65;margin-top:8px;font-weight:300">A passport valid for at least six months beyond your travel dates.</p></div>
+      <div style="border:1px solid rgba(255,255,255,.08);background:#1B1A16;padding:34px 30px"><h4 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px">Vaccinations</h4><p style="font-size:13.5px;color:rgba(250,248,242,.62);line-height:1.65;margin-top:8px;font-weight:300">Required vaccinations including meningitis — we'll guide you through it.</p></div>
+      <div style="border:1px solid rgba(255,255,255,.08);background:#1B1A16;padding:34px 30px"><h4 style="font-family:'Sora',sans-serif;font-weight:600;font-size:18px">Mahram (if applicable)</h4><p style="font-size:13.5px;color:rgba(250,248,242,.62);line-height:1.65;margin-top:8px;font-weight:300">We'll advise on current Saudi requirements based on your circumstances.</p></div>
+    </div>
+  </section>
+
+  <section style="background:#1B1A16;padding:40px 60px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.08)">
+    <div>
+      <h2 style="font-family:'Sora',sans-serif;font-weight:800;font-size:36px;letter-spacing:-.5px;color:#FAF8F2">Reserve your Hajj 2026 place</h2>
+      <p style="font-size:15px;color:rgba(250,248,242,.6);margin-top:8px;font-weight:300">Limited places — speak to our experts today.</p>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btnhover gg-bg" href="tel:+918344488818" style="display:flex;align-items:center;gap:9px;color:#121110;font-family:'Sora',sans-serif;font-weight:700;font-size:14px;padding:14px 24px;border-radius:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call Us</a>
+      <a class="btnhover" href="https://wa.me/918344488818" style="display:flex;align-items:center;gap:9px;background:transparent;color:#FAF8F2;border:1px solid rgba(250,248,242,.3);font-family:'Sora',sans-serif;font-weight:600;font-size:14px;padding:14px 24px;border-radius:8px" style-hover="border-color:#CDA24E;color:#CDA24E"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>WhatsApp</a>
+      <a class="btnhover" href="mailto:kovaiqureishi08@gmail.com" style="display:flex;align-items:center;gap:9px;background:transparent;color:#FAF8F2;border:1px solid rgba(250,248,242,.3);font-family:'Sora',sans-serif;font-weight:600;font-size:14px;padding:14px 24px;border-radius:8px" style-hover="border-color:#CDA24E;color:#CDA24E"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Email</a>
+    </div>
+  </section>
+
+  <footer style="background:#0c0b08;color:rgba(250,248,242,.7);padding:60px 60px 34px">
+    <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)">
+      <div>
+        <div style="display:flex;align-items:center;gap:11px"><img src="assets/kovai-logo.png" alt="Kovai Qureishi" style="height:40px;width:auto;display:block"><span style="font-family:'Sora',sans-serif;font-weight:700;font-size:18px">Kovai Qureishi</span></div>
+        <p style="font-size:13.5px;line-height:1.7;margin-top:16px;max-width:300px;font-weight:300">Trusted Hajj &amp; Umrah journeys, guided with care and devotion.</p>
+      </div>
+      <div><div style="font-family:'Sora',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#CDA24E;margin-bottom:16px">Explore</div><div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;font-weight:300"><a class="navlink" href="Packages.dc.html">Packages</a><a class="navlink" href="Umrah.dc.html">Umrah</a><a class="navlink" href="Hajj.dc.html">Hajj 2026</a></div></div>
+      <div><div style="font-family:'Sora',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#CDA24E;margin-bottom:16px">Company</div><div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;font-weight:300"><a class="navlink" href="About.dc.html">About Us</a><a class="navlink" href="Contact.dc.html">Contact</a><a class="navlink" href="Contact.dc.html">Reviews</a></div></div>
+      <div><div style="font-family:'Sora',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#CDA24E;margin-bottom:16px">Contact</div><div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;font-weight:300"><span>+91 83444 88818</span><span>+91 96774 99786</span><span>+91 96555 88856</span><span>kovaiqureishi08@gmail.com</span><span>Coimbatore, India</span></div></div>
+    </div>
+    <div style="padding-top:24px;font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.45)">© 2026 Kovai Qureishi · IATA protected · Placeholder content</div>
+  </footer>
+
+  <a class="btnhover" href="https://wa.me/918344488818" style="position:fixed;left:24px;bottom:24px;z-index:100;display:flex;align-items:center;gap:10px;background:#25A957;color:#fff;font-family:'Sora',sans-serif;font-weight:600;font-size:14px;padding:13px 21px;border-radius:40px;box-shadow:0 10px 28px rgba(0,0,0,.4)" style-hover="background:#1f9a4d"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>Chat with us</a>
+
+</div>
+</x-dc>
+</body>
+</html>
