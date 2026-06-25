@@ -84,15 +84,18 @@
         <h2 style="font-family:'Sora',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.4px">Request a Quote</h2>
         <p style="font-size:14px;color:rgba(250,248,242,.6);margin-top:6px;font-weight:300">Fill in your details and we'll get back to you within 24 hours.</p>
 
-        <div id="form-body" style="margin-top:26px;display:flex;flex-direction:column;gap:16px">
+        <form id="form-body" style="margin-top:26px;display:flex;flex-direction:column;gap:16px">
+          <input type="hidden" name="access_key" value="5130cefc-4d94-4937-a765-9985f4aabf46">
+          <input type="hidden" name="subject" value="New Quote Request — Kovai Qureishi">
+          <input type="hidden" name="from_name" value="Kovai Qureishi Website">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-            <div><label style="font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.7);display:block;margin-bottom:7px">Full Name</label><input class="fld" type="text" id="f-name" placeholder="Your name"></div>
-            <div><label style="font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.7);display:block;margin-bottom:7px">Phone</label><input class="fld" type="tel" id="f-phone" placeholder="+91 ..."></div>
+            <div><label style="font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.7);display:block;margin-bottom:7px">Full Name</label><input class="fld" type="text" id="f-name" name="name" placeholder="Your name" required></div>
+            <div><label style="font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.7);display:block;margin-bottom:7px">Phone</label><input class="fld" type="tel" id="f-phone" name="phone" placeholder="+91 ..." required></div>
           </div>
-          <div><label style="font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.7);display:block;margin-bottom:7px">Email</label><input class="fld" type="email" id="f-email" placeholder="you@example.com"></div>
+          <div><label style="font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.7);display:block;margin-bottom:7px">Email</label><input class="fld" type="email" id="f-email" name="email" placeholder="you@example.com"></div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
             <div><label style="font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.7);display:block;margin-bottom:7px">Interested In</label>
-              <select class="fld" id="f-pkg">
+              <select class="fld" id="f-pkg" name="package">
                 <option style="background:#121110">Umrah Economy</option>
                 <option style="background:#121110">Umrah Standard</option>
                 <option style="background:#121110">Umrah Premium</option>
@@ -101,12 +104,12 @@
                 <option style="background:#121110">Hajj 2026</option>
               </select>
             </div>
-            <div><label style="font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.7);display:block;margin-bottom:7px">Travellers</label><input class="fld" type="number" id="f-pax" min="1" placeholder="e.g. 2"></div>
+            <div><label style="font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.7);display:block;margin-bottom:7px">Travellers</label><input class="fld" type="number" id="f-pax" name="travellers" min="1" placeholder="e.g. 2"></div>
           </div>
-          <div><label style="font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.7);display:block;margin-bottom:7px">Message</label><textarea class="fld" id="f-msg" rows="4" placeholder="Tell us about your plans..." style="resize:vertical"></textarea></div>
-          <button onclick="submitForm()" class="btnhover gg-bg" style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:#121110;border:none;padding:16px;border-radius:8px;cursor:pointer;margin-top:4px">Send Request →</button>
+          <div><label style="font-size:12px;letter-spacing:.06em;color:rgba(250,248,242,.7);display:block;margin-bottom:7px">Message</label><textarea class="fld" id="f-msg" name="message" rows="4" placeholder="Tell us about your plans..." style="resize:vertical"></textarea></div>
+          <button type="submit" id="submit-btn" class="btnhover gg-bg" style="font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:#121110;border:none;padding:16px;border-radius:8px;cursor:pointer;margin-top:4px">Send Request →</button>
           <p style="font-size:12px;color:rgba(250,248,242,.4);text-align:center;font-weight:300">We respect your privacy. Your details are never shared.</p>
-        </div>
+        </form>
 
         <div id="form-success" style="display:none;margin-top:28px;background:rgba(37,169,87,.12);border:1px solid rgba(37,169,87,.5);border-radius:12px;padding:28px;text-align:center">
           <div style="display:flex;justify-content:center;margin-bottom:12px"><span style="display:flex;width:48px;height:48px;border-radius:50%;background:#25A957;color:#fff;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div>
@@ -141,18 +144,33 @@
 
 </div>
 <script>
-function submitForm() {
+document.getElementById('form-body').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
   const name = document.getElementById('f-name').value.trim() || 'friend';
-  document.getElementById('form-body').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
-  document.getElementById('success-name').textContent = 'Thank you, ' + name + '!';
-}
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  const data = new FormData(this);
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', { method:'POST', body: data });
+    const json = await res.json();
+    if (json.success) {
+      document.getElementById('form-body').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+      document.getElementById('success-name').textContent = 'Thank you, ' + name + '!';
+    } else {
+      btn.textContent = 'Failed — try again';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.textContent = 'Failed — try again';
+    btn.disabled = false;
+  }
+});
 function resetForm() {
-  document.getElementById('f-name').value = '';
-  document.getElementById('f-phone').value = '';
-  document.getElementById('f-email').value = '';
-  document.getElementById('f-msg').value = '';
-  document.getElementById('f-pax').value = '';
+  document.getElementById('form-body').reset();
+  document.getElementById('submit-btn').textContent = 'Send Request →';
+  document.getElementById('submit-btn').disabled = false;
   document.getElementById('form-success').style.display = 'none';
   document.getElementById('form-body').style.display = 'flex';
 }
